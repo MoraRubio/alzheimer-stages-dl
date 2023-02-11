@@ -21,7 +21,7 @@ print(f'Working on device: {device}')
 
 """# Data"""
 
-df = pd.read_csv('tables/adni_table_3D_flirt_balanced_0.tsv', sep='\t')
+df = pd.read_csv('partition_tables/adni_table_3D_flirt_balanced_0.tsv', sep='\t')
 #map_labels = {'CN':0, 'MCI':1, 'EMCI':2, 'AD':3, 'LMCI':3} # 4 classes
 #map_labels = {'CN':0, 'MCI':1, 'EMCI':0, 'AD':1, 'LMCI':1} # 2 classes - Early vs Late
 #df = df.loc[(df.Label=='CN') | (df.Label=='MCI')] # 2 classes
