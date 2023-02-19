@@ -22,7 +22,7 @@ Alzheimer's Disease (AD) is a progressive type of dementia characterized by loss
 The implementation of DL models and training was done using [MONAI](https://docs.monai.io/en/stable) framework, it facilitates the development with the included architectures and preprocessing operations, as well as, allowing the use of custom models such as the [Bilinear](models/bilinear3D.py) used in this work.
 
 ## Data
-Data from ADNI and OASIS can be accesed by request. The *tsv* files on the [partition_tables](partition_tables/) folder contain 10 different train, validation and test partitions maintaining a correct distribution of the subjects among the sets.
+Data from [ADNI](https://adni.loni.usc.edu) and [OASIS](https://www.oasis-brains.org) can be accesed by request in their corresponding websites. The search parameters for ADNI database are presented in the [_IDASearch.pdf_](partition_tables/IDASearch.pdf) file. The *tsv* files on the [partition_tables](partition_tables/) folder contain 10 different train, validation and test partitions maintaining a correct distribution of the subjects among the sets.
 
 ## Environment
 Use anaconda and the provided YAML file to replicate the programming environment `conda env create -f pytorch_monai.yml`.
