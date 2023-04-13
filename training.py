@@ -12,7 +12,7 @@ from monai.transforms import Compose, MapTransform, EnsureChannelFirstd, RandRot
                              Resized, ScaleIntensityd, ToTensord, RandFlipd, RandZoomd
 from monai.networks.nets import ViT, EfficientNetBN, DenseNet
 
-from models.bilinear3D import Bilinear3D
+from models.siamese3D import Siamese3D
 
 pin_memory = torch.cuda.is_available()
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -87,7 +87,7 @@ val_loader = DataLoader(val_ds, batch_size=16, shuffle=False, num_workers=1, pin
 class_weights = class_weight.compute_class_weight(class_weight='balanced', \
     classes=np.unique(df['intLabel'].values), y=df['intLabel'].values)
 
-#model = Bilinear3D(n_classes=n_classes).to(device)
+#model = Siamese3D(n_classes=n_classes).to(device)
 #model = DenseNet(spatial_dims=3, in_channels=1, out_channels=n_classes, dropout_prob=0.3).to(device)
 model = EfficientNetBN(model_name="efficientnet-b7", pretrained=False, progress=False, \
                        spatial_dims=3, in_channels=1, num_classes=n_classes).to(device)
@@ -104,7 +104,7 @@ epoch_loss_values = []
 accuracy_values = []
 
 log_flag = True
-#experiment_name = f'Bilinear3D_{n_classes}Classes_CN_MCI_AD'
+#experiment_name = f'Siamese3D_{n_classes}Classes_CN_MCI_AD'
 #experiment_name = f'DenseNet_{n_classes}Classes_CN_MCI_AD'
 experiment_name = f'EfficientNet_{n_classes}Classes_CN_MCI_AD'
 

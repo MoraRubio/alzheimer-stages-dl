@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
 
-class Bilinear3D(nn.Module):
+class Siamese3D(nn.Module):
     def __init__(self, n_classes):
-        super(Bilinear3D, self).__init__()
+        super(Siamese3D, self).__init__()
         self.conv3d_5_2 = nn.ModuleList([nn.Conv3d(in_channels=1, out_channels=32, kernel_size=(5,5,5), stride=(2,2,2), padding='valid') for _ in range(2)])
         self.conv3d_3_1 = nn.ModuleList([nn.Conv3d(in_channels=32, out_channels=32, kernel_size=(3,3,3), stride=(1,1,1), padding='valid') for _ in range(12)])
         self.bn3d = nn.ModuleList([nn.BatchNorm3d(num_features=32) for _ in range(14)])
@@ -62,7 +62,7 @@ class Bilinear3D(nn.Module):
         return output
 
 def test():
-    model = Bilinear3D(n_classes=5)
+    model = Siamese3D(n_classes=5)
     print(model)
     input = torch.randn(3, 1, 91, 109, 91)
     out = model(input)

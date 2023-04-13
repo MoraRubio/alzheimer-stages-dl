@@ -8,7 +8,7 @@ from monai.data import DataLoader, Dataset
 from monai.transforms import Compose, MapTransform, EnsureChannelFirstd, \
                              Resized, ScaleIntensityd, ToTensord
 
-from models.bilinear3D import Bilinear3D
+from models.siamese3D import Siamese3D
 from monai.networks.nets import ViT, EfficientNetBN, DenseNet
 
 pin_memory = torch.cuda.is_available()
@@ -72,7 +72,7 @@ test_loader = DataLoader(test_ds, batch_size=64, shuffle=False, num_workers=1, p
 
 """# Evaluation"""
 weights = f"EfficientNet_2Classes_CN_AD.pth"
-#model = Bilinear3D(n_classes=n_classes).to(device)
+#model = Siamese3D(n_classes=n_classes).to(device)
 #model = DenseNet(spatial_dims=3, in_channels=1, out_channels=n_classes, dropout_prob=0.3).to(device)
 model = EfficientNetBN(model_name="efficientnet-b7", pretrained=False, progress=False, \
                        spatial_dims=3, in_channels=1, num_classes=n_classes).to(device)
