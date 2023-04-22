@@ -1,5 +1,7 @@
 # Classification of Alzheimer's Disease stages from Magnetic Resonance Images using Deep Learning
 
+[![DOI](https://zenodo.org/badge/587370693.svg)](https://zenodo.org/badge/latestdoi/587370693)
+
 ## Authors
 
 Alejandro Mora-Rubio<sup>1</sup>, Mario Alejandro Bravo-Ortiz<sup>1</sup>, Sebastián Quiñones-Arredondo<sup>1</sup>, Jose Manuel Saborit-Torres<sup>2</sup>, Gonzalo A. Ruz<sup>3,4,5</sup>, and Reinel Tabares-Soto<sup>1,3,6</sup>
